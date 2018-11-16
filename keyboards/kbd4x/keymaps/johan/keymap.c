@@ -20,43 +20,51 @@
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
   KBD4X = SAFE_RANGE,
+  CS_LAMBDA,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // STANDARD
   [0] = LAYOUT_planck_mit(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENTER,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLASH, KC_QUOT,
-    KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, MO(1),   LT(3, KC_SPACE),  MO(2),   KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
+    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,     KC_BSPC,
+    KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_ENTER,
+    KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLASH, KC_QUOT,
+    KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, MO(1),   LT(3, KC_SPACE),  MO(2),   KC_LEFT, KC_DOWN, KC_UP,    KC_RIGHT
   ),
 
 // LOWER (LEFT)
   [1] = LAYOUT_planck_mit(
-    KC_GRAVE, KC_1,    KC_2,   KC_3, KC_4, KC_5, KC_6,    KC_7,    KC_8,    KC_9,     KC_0,     ___,
-    KC_TILDE, RGB_TOG, ___,    ___,  ___,  ___,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_MINUS, KC_EQL,
-    ___,      KC_BSLS, KC_DEL, ___,  ___,  ___,  ___,     ___,    ___,      ___,     ___,       KC_INS,
-    ___,      ___,     ___,    ___,  ___,  KC_SPACE,      ___,    KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END
+    KC_GRAVE, KC_1,    KC_2,   KC_3, KC_4, KC_5, KC_6,    KC_7,    KC_8,    KC_9,      KC_0,     ___,
+    KC_TILDE, RGB_TOG, ___,    ___,  ___,  ___,  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,  KC_MINUS, KC_EQL,
+    ___,      KC_BSLS, KC_DEL, ___,  ___,  ___,  ___,     ___,    ___,      CS_LAMBDA, KC_MINUS, KC_INS,
+    ___,      ___,     ___,    ___,  ___,  KC_SPACE,      ___,    KC_HOME,  KC_PGDN,   KC_PGUP,  KC_END
   ),
 
 // UPPER (RIGHT)
   [2] = LAYOUT_planck_mit(
-    ___, KC_F1, KC_F2,  KC_F3,  KC_F4,  KC_F5, KC_F6, KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-    ___, KC_F5, KC_F6,  KC_F7,  KC_F8,  ___,   ___,   ___,     ___,     ___,     ___,     RESET,
-    ___, KC_F9, KC_F10, KC_F11, KC_F12, ___,   ___,   ___,     ___,     ___,     KC_MUTE, KC_MPLY,
-    ___, ___,   ___,    ___,    ___,    KC_SPACE,     ___,     KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
+    KC_GRAVE, KC_F1, KC_F2,  KC_F3,  KC_F4,  KC_F5, KC_F6, KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+    KC_TILDE, KC_F5, KC_F6,  KC_F7,  KC_F8,  ___,   ___,   ___,     ___,     ___,     ___,     RESET,
+    ___,      KC_F9, KC_F10, KC_F11, KC_F12, ___,   ___,   ___,     ___,     ___,     KC_MUTE, KC_MPLY,
+    ___,      ___,   ___,    ___,    ___,    KC_SPACE,     ___,     KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
   ),
 
 // FUNCTION (SPACE)
   [3] = LAYOUT_planck_mit(
-    ___, ___, ___,     ___, ___, ___, KC_LPRN, KC_RPRN, ___, KC_MINUS, KC_EQL, ___,
-    ___, ___, KC_PSCR, ___, ___, ___, KC_LBRC, KC_RBRC, ___, ___,      ___,    ___,
-    ___, ___, KC_DEL,  ___, ___, ___, KC_LCBR, KC_RCBR, ___, ___,      ___,    ___,
-    ___, ___, ___,     ___, ___, KC_SPACE,     ___,     ___, ___,      ___,    ___
+    KC_LCBR, KC_1, KC_2,    KC_3, KC_4, KC_5,    KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_RCBR,
+    KC_LBRC, ___,  KC_PSCR, ___,  ___,  KC_LPRN, KC_RPRN, ___,     ___,     KC_LBRC,  KC_RBRC, KC_RBRC,
+    KC_LPRN, ___,  KC_DEL,  ___,  ___,  ___,     ___,     ___,     ___,     ___,      ___,     KC_RPRN,
+    ___,     ___,  ___,     ___,  ___,  ___,              ___,     ___,     ___,      ___,     ___
   ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed) {
+    switch (keycode) {
+      case CS_LAMBDA:
+        SEND_STRING("=>");
+        return false;
+    }
+  }
   return true;
 }
 
