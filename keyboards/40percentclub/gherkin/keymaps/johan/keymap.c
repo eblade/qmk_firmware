@@ -9,8 +9,8 @@
 #define FN1_B       LT(1, KC_B)
 #define FN2_N       LT(2, KC_N)
 
-#define SFT_ENT     LSFT_T(KC_ENT)
-#define CTL_SPC     LCTL_T(KC_SPC)
+#define SFT_SPC     LSFT_T(KC_SPC)
+#define CTL_ENT     LCTL_T(KC_ENT)
 #define GUI_DOT     LGUI_T(KC_DOT)
 #define ALT_COMM    LALT_T(KC_COMM)
 
@@ -28,23 +28,23 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // DEFAULT LAYER
   [0] = LAYOUT_ortho_3x10(
-    CTL_SPC, GUI_DOT, ALT_COMM,KC_M,    FN2_N,   FN1_B,   AGR_V,   ALT_C,   GUI_X,   CTL_Z,
-    SFT_ENT, KC_L,    KC_K,    KC_J,    KC_H,    KC_G,    KC_F,    KC_D,    KC_S,    SFT_A,
+    CTL_ENT, GUI_DOT, ALT_COMM,KC_M,    FN2_N,   FN1_B,   AGR_V,   ALT_C,   GUI_X,   CTL_Z,
+    SFT_SPC, KC_L,    KC_K,    KC_J,    KC_H,    KC_G,    KC_F,    KC_D,    KC_S,    SFT_A,
     KC_P,    KC_O,    KC_I,    KC_U,    KC_Y,    KC_T,    KC_R,    KC_E,    KC_W,    KC_Q
   ),
 
   // FN1 (Left FN key)
   [1] = LAYOUT_ortho_3x10(
-    KC_SLSH, KC_DOT,  KC_COMM, KC_QUOT, KC_DEL,  XXXXXXX, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
-    KC_EQL,  KC_RIGHT,KC_UP,   KC_DOWN, KC_LEFT, XXXXXXX, XXXXXXX, KC_GRV,  KC_BSLS, KC_LSFT,
+    KC_RBRC, KC_RPRN, KC_LPRN, KC_LBRC, XXXXXXX, XXXXXXX, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
+    _______, KC_RIGHT,KC_UP,   KC_DOWN, KC_LEFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
     KC_0,    KC_9,    KC_8,    KC_7,    KC_6,    KC_5,    KC_4,    KC_3,    KC_2,    KC_1
   ),
 
   // FN2 (Right FN key)
   [2] = LAYOUT_ortho_3x10(
     KC_MFFD, KC_VOLU, KC_VOLD, KC_MRWD, XXXXXXX, KC_BSPC, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
-    _______, KC_SCLN, KC_COLN, KC_RCBR, KC_LCBR, KC_EQL,  KC_MINS, KC_RBRC, KC_LBRC, KC_LSFT,
-    KC_RPRN, KC_LPRN, KC_PGUP, KC_PGDN, KC_END,  KC_HOME, KC_INS,  OSL(3),  KC_TILD, KC_GRV
+    _______, KC_END,  KC_PGUP, KC_PGDN, KC_HOME, KC_INS,  XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, OSL(3),  XXXXXXX, XXXXXXX
   ),
 
   // Fx/Special One-off layer (Right FN key + E)
@@ -64,18 +64,43 @@ void led_set_user(uint8_t usb_led) {
 const uint16_t PROGMEM backspace_combo[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM delete_combo[] = {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM escape_combo[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM escape2_combo[] = {KC_G, KC_H, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {SFT_A, KC_S, COMBO_END};
+
+const uint16_t PROGMEM backslash_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM pipe_combo[] = {KC_S, KC_F, COMBO_END};
 const uint16_t PROGMEM dash_combo[] = {KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM underscore_combo[] = {KC_F, KC_G, COMBO_END};
+const uint16_t PROGMEM underscore_combo[] = {KC_D, KC_G, COMBO_END};
+const uint16_t PROGMEM equal_combo[] = {KC_F, KC_G, COMBO_END};
+const uint16_t PROGMEM plus_combo[] = {KC_F, KC_H, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {KC_H, KC_J, COMBO_END};
-const uint16_t PROGMEM semicolon_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM semicolon_combo[] = {KC_H, KC_K, COMBO_END};
+const uint16_t PROGMEM singlequote_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM doublequote_combo[] = {KC_J, KC_L, COMBO_END};
+const uint16_t PROGMEM slash_combo[] = {KC_K, KC_L, COMBO_END};
+
+const uint16_t PROGMEM backtick_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM tilde_combo[] = {KC_W, KC_R, COMBO_END};
+
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(backspace_combo, KC_BSPC),
     COMBO(delete_combo, KC_DEL),
     COMBO(escape_combo, KC_ESC),
+    COMBO(escape2_combo, KC_ESC),
     COMBO(tab_combo, KC_TAB),
+
+    COMBO(backslash_combo, KC_BSLS),
+    COMBO(pipe_combo, KC_PIPE),
     COMBO(dash_combo, KC_MINS),
     COMBO(underscore_combo, KC_UNDS),
+    COMBO(equal_combo, KC_EQL),
+    COMBO(plus_combo, KC_PLUS),
     COMBO(colon_combo, KC_COLN),
     COMBO(semicolon_combo, KC_SCLN),
+    COMBO(singlequote_combo, KC_QUOT),
+    COMBO(doublequote_combo, KC_DQT),
+    COMBO(slash_combo, KC_SLSH),
+
+    COMBO(backtick_combo, KC_GRV),
+    COMBO(tilde_combo, KC_TILD),
 };
