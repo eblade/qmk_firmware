@@ -43,8 +43,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // FN2 (Right FN key)
   [2] = LAYOUT_ortho_3x10(
     KC_MFFD, KC_VOLU, KC_VOLD, KC_MRWD, XXXXXXX, KC_BSPC, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
-    _______, KC_END,  KC_PGUP, KC_PGDN, KC_HOME, KC_INS,  XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, OSL(3),  XXXXXXX, XXXXXXX
+    KC_MPLY, KC_END,  KC_PGUP, KC_PGDN, KC_HOME, KC_INS,  XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
+    KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, OSL(3),  XXXXXXX, XXXXXXX
   ),
 
   // Fx/Special One-off layer (Right FN key + E)
@@ -78,6 +78,7 @@ const uint16_t PROGMEM semicolon_combo[] = {KC_H, KC_K, COMBO_END};
 const uint16_t PROGMEM singlequote_combo[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM doublequote_combo[] = {KC_J, KC_L, COMBO_END};
 const uint16_t PROGMEM slash_combo[] = {KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM question_combo[] = {KC_K, SFT_SPC, COMBO_END};
 
 const uint16_t PROGMEM backtick_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM tilde_combo[] = {KC_W, KC_R, COMBO_END};
@@ -100,6 +101,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(singlequote_combo, KC_QUOT),
     COMBO(doublequote_combo, KC_DQT),
     COMBO(slash_combo, KC_SLSH),
+    COMBO(question_combo, KC_QUES),
 
     COMBO(backtick_combo, KC_GRV),
     COMBO(tilde_combo, KC_TILD),
