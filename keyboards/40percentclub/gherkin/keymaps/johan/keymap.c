@@ -65,7 +65,9 @@ const uint16_t PROGMEM backspace_combo[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM delete_combo[] = {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM escape_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM escape2_combo[] = {KC_G, KC_H, COMBO_END};
+const uint16_t PROGMEM escape3_combo[] = {KC_R, KC_T, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {SFT_A, KC_S, COMBO_END};
+const uint16_t PROGMEM shift_tab_combo[] = {SFT_A, KC_D, COMBO_END};
 
 const uint16_t PROGMEM backslash_combo[] = {KC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM pipe_combo[] = {KC_S, KC_F, COMBO_END};
@@ -82,6 +84,12 @@ const uint16_t PROGMEM question_combo[] = {KC_K, SFT_SPC, COMBO_END};
 
 const uint16_t PROGMEM backtick_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM tilde_combo[] = {KC_W, KC_R, COMBO_END};
+const uint16_t PROGMEM lprn_combo[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM rprn_combo[] = {KC_E, KC_T, COMBO_END};
+const uint16_t PROGMEM lbrc_combo[] = {KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM rbrc_combo[] = {KC_Y, KC_I, COMBO_END};
+const uint16_t PROGMEM lcbr_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM rcbr_combo[] = {KC_U, KC_O, COMBO_END};
 
 const uint16_t PROGMEM n1_combo[] = {KC_Q, KC_S, COMBO_END};
 const uint16_t PROGMEM n2_combo[] = {KC_W, KC_D, COMBO_END};
@@ -104,7 +112,9 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(delete_combo, KC_DEL),
     COMBO(escape_combo, KC_ESC),
     COMBO(escape2_combo, KC_ESC),
+    COMBO(escape3_combo, KC_ESC),
     COMBO(tab_combo, KC_TAB),
+    COMBO(shift_tab_combo, S(KC_TAB)),
 
     COMBO(backslash_combo, KC_BSLS),
     COMBO(pipe_combo, KC_PIPE),
@@ -121,6 +131,12 @@ combo_t key_combos[COMBO_COUNT] = {
 
     COMBO(backtick_combo, KC_GRV),
     COMBO(tilde_combo, KC_TILD),
+    COMBO(lprn_combo, KC_LPRN),
+    COMBO(rprn_combo, KC_RPRN),
+    COMBO(lbrc_combo, KC_LBRC),
+    COMBO(rbrc_combo, KC_RBRC),
+    COMBO(lcbr_combo, KC_LCBR),
+    COMBO(rcbr_combo, KC_RCBR),
 
     COMBO(n1_combo, KC_1),
     COMBO(n2_combo, KC_2),
