@@ -83,6 +83,17 @@ const uint16_t PROGMEM question_combo[] = {KC_K, SFT_SPC, COMBO_END};
 const uint16_t PROGMEM backtick_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM tilde_combo[] = {KC_W, KC_R, COMBO_END};
 
+const uint16_t PROGMEM n1_combo[] = {KC_Q, KC_S, COMBO_END};
+const uint16_t PROGMEM n2_combo[] = {KC_W, KC_D, COMBO_END};
+const uint16_t PROGMEM n3_combo[] = {KC_E, KC_F, COMBO_END};
+const uint16_t PROGMEM n4_combo[] = {KC_R, KC_G, COMBO_END};
+const uint16_t PROGMEM n5_combo[] = {KC_T, KC_H, COMBO_END};
+const uint16_t PROGMEM n6_combo[] = {KC_Y, KC_G, COMBO_END};
+const uint16_t PROGMEM n7_combo[] = {KC_U, KC_H, COMBO_END};
+const uint16_t PROGMEM n8_combo[] = {KC_I, KC_J, COMBO_END};
+const uint16_t PROGMEM n9_combo[] = {KC_O, KC_K, COMBO_END};
+const uint16_t PROGMEM n0_combo[] = {KC_P, KC_L, COMBO_END};
+
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(backspace_combo, KC_BSPC),
     COMBO(delete_combo, KC_DEL),
@@ -105,4 +116,15 @@ combo_t key_combos[COMBO_COUNT] = {
 
     COMBO(backtick_combo, KC_GRV),
     COMBO(tilde_combo, KC_TILD),
+
+    COMBO(n1_combo, KC_1),
+    COMBO(n2_combo, KC_2),
+    COMBO(n3_combo, KC_3),
+    COMBO(n4_combo, KC_4),
+    COMBO(n5_combo, KC_5),
+    COMBO(n6_combo, KC_6),
+    COMBO(n7_combo, KC_7),
+    COMBO(n8_combo, KC_8),
+    COMBO(n9_combo, KC_9),
+    COMBO(n0_combo, KC_0),
 };
