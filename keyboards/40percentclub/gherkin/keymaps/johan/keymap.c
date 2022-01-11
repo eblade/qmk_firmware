@@ -35,8 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // FN1 (Left FN key)
   [1] = LAYOUT_ortho_3x10(
-    KC_RBRC, KC_RPRN, KC_LPRN, KC_LBRC, XXXXXXX, XXXXXXX, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
-    _______, KC_RIGHT,KC_UP,   KC_DOWN, KC_LEFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
+    _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
+    _______, KC_RIGHT,KC_UP,   KC_DOWN, KC_LEFT, _______, _______, _______, _______, KC_LSFT,
     KC_0,    KC_9,    KC_8,    KC_7,    KC_6,    KC_5,    KC_4,    KC_3,    KC_2,    KC_1
   ),
 
@@ -64,8 +64,6 @@ void led_set_user(uint8_t usb_led) {
 const uint16_t PROGMEM backspace_combo[] = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM delete_combo[] = {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM escape_combo[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM escape2_combo[] = {KC_G, KC_H, COMBO_END};
-const uint16_t PROGMEM escape3_combo[] = {KC_R, KC_T, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {SFT_A, KC_S, COMBO_END};
 const uint16_t PROGMEM shift_tab_combo[] = {SFT_A, KC_D, COMBO_END};
 
@@ -102,6 +100,12 @@ const uint16_t PROGMEM n8_combo[] = {KC_I, KC_J, COMBO_END};
 const uint16_t PROGMEM n9_combo[] = {KC_O, KC_K, COMBO_END};
 const uint16_t PROGMEM n0_combo[] = {KC_P, KC_L, COMBO_END};
 
+const uint16_t PROGMEM f1_combo[] = {KC_U, KC_J, COMBO_END};
+const uint16_t PROGMEM f2_combo[] = {KC_W, KC_S, COMBO_END};
+const uint16_t PROGMEM f3_combo[] = {KC_E, KC_D, COMBO_END};
+const uint16_t PROGMEM f4_combo[] = {KC_R, KC_F, COMBO_END};
+const uint16_t PROGMEM f5_combo[] = {KC_T, KC_G, COMBO_END};
+const uint16_t PROGMEM f6_combo[] = {KC_Y, KC_H, COMBO_END};
 const uint16_t PROGMEM f9_combo[] = {KC_U, KC_J, COMBO_END};
 const uint16_t PROGMEM f10_combo[] = {KC_I, KC_K, COMBO_END};
 const uint16_t PROGMEM f11_combo[] = {KC_O, KC_L, COMBO_END};
@@ -111,8 +115,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(backspace_combo, KC_BSPC),
     COMBO(delete_combo, KC_DEL),
     COMBO(escape_combo, KC_ESC),
-    COMBO(escape2_combo, KC_ESC),
-    COMBO(escape3_combo, KC_ESC),
     COMBO(tab_combo, KC_TAB),
     COMBO(shift_tab_combo, S(KC_TAB)),
 
@@ -149,6 +151,12 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(n9_combo, KC_9),
     COMBO(n0_combo, KC_0),
 
+    COMBO(f1_combo, KC_F1),
+    COMBO(f2_combo, KC_F2),
+    COMBO(f3_combo, KC_F3),
+    COMBO(f4_combo, KC_F4),
+    COMBO(f5_combo, KC_F5),
+    COMBO(f6_combo, KC_F6),
     COMBO(f9_combo, KC_F9),
     COMBO(f10_combo, KC_F10),
     COMBO(f11_combo, KC_F11),
