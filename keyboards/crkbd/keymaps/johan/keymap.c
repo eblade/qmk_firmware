@@ -103,8 +103,8 @@ const uint16_t PROGMEM f2_combo[] = {KC_W, KC_S, COMBO_END};
 const uint16_t PROGMEM f3_combo[] = {KC_E, KC_D, COMBO_END};
 const uint16_t PROGMEM f4_combo[] = {KC_R, KC_F, COMBO_END};
 const uint16_t PROGMEM f5_combo[] = {KC_T, KC_G, COMBO_END};
-const uint16_t PROGMEM f6_combo[] = {KC_LPRN, KC_EQL, COMBO_END};
-const uint16_t PROGMEM f7_combo[] = {KC_RPRN, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM f6_combo[] = {KC_LBRC, KC_EQL, COMBO_END};
+const uint16_t PROGMEM f7_combo[] = {KC_RBRC, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM f8_combo[] = {KC_Y, KC_H, COMBO_END};
 const uint16_t PROGMEM f9_combo[] = {KC_U, KC_J, COMBO_END};
 const uint16_t PROGMEM f10_combo[] = {KC_I, KC_K, COMBO_END};
@@ -137,6 +137,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(f4_combo, KC_F4),
     COMBO(f5_combo, KC_F5),
     COMBO(f6_combo, KC_F6),
+    COMBO(f7_combo, KC_F7),
+    COMBO(f8_combo, KC_F8),
     COMBO(f9_combo, KC_F9),
     COMBO(f10_combo, KC_F10),
     COMBO(f11_combo, KC_F11),

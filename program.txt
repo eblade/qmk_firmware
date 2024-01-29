@@ -1,3 +1,12 @@
+
+  trasigt planck
   990  make kbd4x:johan
   991  sudo dfu-programmer atmega32u4 erase
-  992  sudo dfu-programmer atmega32u4 flash .build/kbd4x_johan.hex 
+  992  sudo dfu-programmer atmega32u4 flash .build/kbd4x_johan.hex
+
+  kantigt planck
+sudo bootloadHID -r .build/kprepublic_jj40_default.hex
+
+split corne:
+qmk compile -kb crkbd -km johan -e CONVERT_TO=elite_pi
+then double-tap the reset button, and drag and drop the uf2 file

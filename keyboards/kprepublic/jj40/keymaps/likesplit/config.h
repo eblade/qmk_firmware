@@ -5,4 +5,8 @@
 
 #define FORCE_NKRO
 
+#define TAPPING_TERM 200
+#define COMBO_COUNT 28
+#define COMBO_TERM 30
+
 #endif
