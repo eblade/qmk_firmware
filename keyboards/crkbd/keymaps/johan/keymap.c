@@ -26,6 +26,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define FN2_TAB     LT(2, KC_TAB)
 #define FN3_ESC     LT(3, KC_ESC)
 
+enum custom_keycodes {
+    CK_EXPL = SAFE_RANGE,
+    CK_CONS,
+    CK_FOR,
+    CK_WHIL,
+    CK_MAIL,
+    CK_MAI2,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -55,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+      _______, CK_WHIL, CK_EXPL, _______, _______, CK_MAIL,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, CK_FOR,  _______, CK_MAI2,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, KC_VOLD, KC_VOLU, KC_MUTE,
+      _______, _______, CK_CONS, _______, _______, _______,                      _______, _______, _______, KC_VOLD, KC_VOLU, KC_MUTE,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_ESC, _______, _______,    KC_BSPC,  _______, KC_TAB
                                       //`--------------------------'  `--------------------------'
@@ -144,3 +153,39 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(f11_combo, KC_F11),
     COMBO(f12_combo, KC_F12),
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CK_WHIL:
+            if (record->event.pressed) {
+                SEND_STRING("while () {}");
+            }
+            break;
+        case CK_FOR:
+            if (record->event.pressed) {
+                SEND_STRING("for (;;) {}");
+            }
+            break;
+        case CK_CONS:
+            if (record->event.pressed) {
+                SEND_STRING("const");
+            }
+            break;
+        case CK_EXPL:
+            if (record->event.pressed) {
+                SEND_STRING("explicit");
+            }
+            break;
+        case CK_MAIL:
+            if (record->event.pressed) {
+                SEND_STRING("johan@egneblad.se");
+            }
+            break;
+        case CK_MAI2:
+            if (record->event.pressed) {
+                SEND_STRING("jee@msim.metrea.aero");
+            }
+            break;
+    }
+    return true;
+}
